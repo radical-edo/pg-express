@@ -4,6 +4,7 @@
   "description": "express.js server with PosgreSQL",
   "main": "index.js",
   "scripts": {
+    "scli": "sequelize $*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": {
