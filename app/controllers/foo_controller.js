@@ -1,5 +1,6 @@
 'use strict';
 const BaseController = require('./base_controller');
+const { ReplySent } = require('../../lib/errors');
 
 class FooController extends BaseController {
   constructor(...args) {
@@ -8,7 +9,8 @@ class FooController extends BaseController {
   }
 
   checkStuff() {
-    return true;
+    this.reply('break early');
+    throw new Error();
   }
 
   index() {
