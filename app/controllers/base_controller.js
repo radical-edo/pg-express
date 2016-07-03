@@ -1,7 +1,7 @@
 'use strict';
 
 class BaseController {
-  before(name, options = {}) {
+  before(name, options = { only: null, except: null }) {
     const { only, except } = options;
     this.__beforeFilters.push({ name, only, except });
   }
