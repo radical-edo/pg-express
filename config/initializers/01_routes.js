@@ -1,7 +1,9 @@
 'use strict';
-const router = require(process.cwd() + '/app/routes');
+const cwd = process.cwd();
+const router = require(cwd + '/app/routes');
+const config = require(cwd + '/config');
 
 module.exports = function routes(app) {
-  app.use(router);
+  app.use(config.apiNamespace, router);
 };
 
