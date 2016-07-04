@@ -5,7 +5,7 @@ const { ReplySent } = require('../../lib/errors');
 class FooController extends BaseController {
   constructor(...args) {
     super(...args);
-    this.before('checkStuff');
+    this.before('checkStuff', { except: 'show' });
   }
 
   checkStuff() {
@@ -15,6 +15,10 @@ class FooController extends BaseController {
 
   index() {
     this.reply('index');
+  }
+
+  show() {
+    this.reply('show');
   }
 }
 
