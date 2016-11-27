@@ -5,12 +5,18 @@ const { ReplySent } = require('../../lib/errors');
 class FooController extends BaseController {
   constructor(...args) {
     super(...args);
-    this.before('checkStuff', { except: 'show' });
+    this.before('breakEarlyWithTrueReturned', { only: 'show' });
+    this.before('breakEarlyWithError', { except: 'show' });
   }
 
-  checkStuff() {
-    this.reply('break early');
-    throw new Error();
+  breakEarlyWithTrueReturned() {
+    this.reply('call chain has been broken. "show" will never be called');
+    return true;
+  }
+
+  breakEarlyWithError() {
+    this.reply('call chain has been broken. "index" will never be called');
+    throw new ReplySent();
   }
 
   index() {
