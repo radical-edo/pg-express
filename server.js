@@ -10,7 +10,7 @@ const config = require('./config');
 
 const app = express();
 
-strap.files(process.cwd() + '/config/initializers', app);
+strap.files(__dirname + '/config/initializers', app);
 
 app.listen(config.port, function () {
   console.log('Server listening on', config.port);
