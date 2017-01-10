@@ -1,8 +1,8 @@
 'use strict';
 const { User } = require('../../app/models');
 
-const { env: { ADMIN_USER_EMAIL } = {} } = process;
-const { env: { ADMIN_USER_PASSWORD } = {} } = process;
+const { env: { ADMIN_USER_EMAIL: email } = {} } = process;
+const { env: { ADMIN_USER_PASSWORD: password } = {} } = process;
 
 module.exports = {
   up: function (queryInterface, Sequelize) {
