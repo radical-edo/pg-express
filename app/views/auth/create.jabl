@@ -1,0 +1,7 @@
+object();
+
+takes('users/base');
+
+node('token', function (user) {
+  return partial('tokens/base', { object: user.token });
+});

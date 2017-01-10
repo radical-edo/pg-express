@@ -1,0 +1,3 @@
+collection();
+
+takes('users/base');

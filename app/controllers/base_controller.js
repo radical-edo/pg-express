@@ -8,6 +8,7 @@ class BaseController {
 
   reply(body, status = 200) {
     this.res.status(status).send(body);
+    return null;
   }
 
   constructor(req, res) {
